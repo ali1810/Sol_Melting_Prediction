@@ -289,7 +289,7 @@ def remove_invalid(smiles):
 # Page Title
 ######################
 #st.set_page_config(page_title="AqSolPred: Online Solubility Prediction Tool")
-st.set_page_config(page_title="AqSolPred: Online Solubility Prediction Tool",layout="wide")
+st.set_page_config(page_title="Chem-Phy: Online Solubility and MP Prediction Tool",layout="wide")
 st.write("""# Solibility and Melting Point Prediction on Aqueous Solvent """)
 
 #image = Image.open('sol_image.jpeg')
@@ -327,7 +327,7 @@ smiles = st.sidebar.text_input('then press predict button', value ="CC(=O)OC1=CC
 #image = Image.open('sol_image.jpeg')
 #st.image(img, use_column_width=False)
 img=smiles_to_img(smiles)
-st.write("a logo and text next to eachother")
+#st.write("a logo and text next to eachother")
 col1, mid, col2 = st.columns([25,10,50])
 with col1:
     st.image(img, use_column_width=False)
@@ -355,7 +355,7 @@ if st.sidebar.button('Predict'):
 #mols = [Chem.rdmolfiles.MolFromSmiles(SMILES_string) for SMILES_string in smiles]
     #rf_model_import = pickle.load(open('models/model_rf_93.pkl', 'rb'))
     
-    dt_model_import = pickle.load(open('models/finalized_sol_mp_123model.pkl', 'rb'))
+    dt_model_import = pickle.load(open('finalized_sol_mp_123model.pkl', 'rb'))
     pred_rf1= dt_model_import.predict(generated_descriptors1)
     X=pred_rf1[0]
     sol=X[0]
@@ -427,7 +427,7 @@ if st.sidebar.button('Prediction for input file'):
     # data
     SMILES=data["SMILES"]
     generated_descriptors = generate123(SMILES)
-    rf_model_import = pickle.load(open('models/finalized_sol_mp_123model.pkl', 'rb'))
+    rf_model_import = pickle.load(open('finalized_sol_mp_123model.pkl', 'rb'))
     #mols = [Chem.rdmolfiles.MolFromSmiles(SMILES_string) for SMILES_string in SMILES]
 #Convert training molecules into training fingerprints
     #bi = {}
