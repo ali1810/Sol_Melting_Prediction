@@ -385,7 +385,7 @@ if st.sidebar.button('Predict'):
     P_sol1=smiles_to_sol(smiles) ## calling function to get the solubility from <pubchem
 #df_results = pd.DataFrame(df_results1)
     #render_mol(blk)
-    data = dict(Comp_name=c_name,SMILES=smiles, Predicted_LogS=sol,Predicted_MP(°C)=mp,
+    data = dict(Comp_name=c_name,SMILES=smiles, Predicted_LogS=sol,Predicted_MP(C)=mp,
     Mol_Liter=mol_liter1,Gram_Liter=Gram_liter2,PubChem_sol=P_sol1,Pubchem_mp=P_mp)
     df = pd.DataFrame(data, index=[0])
     st.header('Predicted LogS and Melting point of given smiles')
