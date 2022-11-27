@@ -388,7 +388,7 @@ if st.sidebar.button('Predict'):
     data = dict(Comp_name=c_name,SMILES=smiles, Predicted_LogS=sol,Predicted_MP=mp,
     Mol_Liter=mol_liter1,Gram_Liter=Gram_liter2,PubChem_sol=P_sol1,Pubchem_mp=P_mp)
     df = pd.DataFrame(data, index=[0])
-    st.header('Predicted LogS values for single smiles')
+    st.header('Predicted LogS and Melting point of given smiles')
     df
     #st.write('Good Morning') #displayed when the button is clicked
     st.header('Computed molecular descriptors')
